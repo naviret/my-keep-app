@@ -4,12 +4,15 @@ import Header from './Header';
 import Footer from './Footer';
 import Note from './Note';
 
+// importing default notes
+import defaultNotes from '../notes.js';
+
 var key = 0;
 
 function App() {
     const [inputTitle, setInputTitle] = useState('');
     const [inputContent, setInputContent] = useState('');
-    const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState(defaultNotes);
 
     var inputNote = {};
 
