@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-family: 'Montserrat', sans-serif;
 }
+
 body {
     background: #eee;
     padding: 0 16px;
@@ -56,4 +58,49 @@ footer p {
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+.add-note {
+    margin: 0;
+    padding: 0;
+}
+
+.add-note form {
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    padding: 15px;
+    color: black;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note input,
+.add-note textarea {
+    position: inherit;
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+}
+
+.add-note form button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #f5ba13;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
 }
