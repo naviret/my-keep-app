@@ -4,13 +4,14 @@ import Header from './Header';
 import Footer from './Footer';
 import Note from './Note';
 
+var key = 0;
+
 function App() {
     const [inputTitle, setInputTitle] = useState('');
     const [inputContent, setInputContent] = useState('');
     const [notes, setNotes] = useState([]);
 
-    const inputNote = {};
-    var key = 0;
+    var inputNote = {};
 
     function handleTitleChange(event) {
         setInputTitle(event.target.value);
@@ -36,9 +37,7 @@ function App() {
     }
 
     function removeNote(key) {
-        const newNotes = notes.filter(note => {
-            note.key !== key;
-        });
+        const newNotes = notes.filter(note => note.key !== key);
         setNotes(newNotes);
     }
 
