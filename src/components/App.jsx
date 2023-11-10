@@ -8,13 +8,23 @@ import Note from './Note';
 import defaultNotes from '../notes.js';
 
 var key = 0;
+let usedKeys = new Set();
+
+defaultNotes.forEach(note => {
+    usedKeys.add(note.key);
+});
+
+function makeKey() {
+    while (usedKeys.has(++key)) {}
+    return key;
+}
 
 function App() {
     const [inputTitle, setInputTitle] = useState('');
     const [inputContent, setInputContent] = useState('');
     const [notes, setNotes] = useState(defaultNotes);
 
-    var inputNote = {};
+    const inputNote = {};
 
     function handleTitleChange(event) {
         setInputTitle(event.target.value);
@@ -25,7 +35,8 @@ function App() {
     }
 
     function addNote(event) {
-        inputNote.key = key++;
+        console.log(key);
+        inputNote.key = makeKey();
         inputNote.title = inputTitle;
         inputNote.content = inputContent;
 
@@ -39,8 +50,8 @@ function App() {
         setInputContent('');
     }
 
-    function removeNote(key) {
-        const newNotes = notes.filter(note => note.key !== key);
+    function removeNote(delKey) {
+        const newNotes = notes.filter(note => note.key !== delKey);
         setNotes(newNotes);
     }
 
