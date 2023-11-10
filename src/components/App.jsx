@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import Note from  "./Note";
 
 const date = new Date();
 const year = date.getFullYear();
@@ -11,6 +12,11 @@ function App() {
         <div>        
             <Header text="Keeper"></Header>
             <Footer year={year}></Footer>
+            <Note 
+                title="Hello World" 
+                content="saying hi"
+            ></Note>
+            
         </div>
     )
 }
