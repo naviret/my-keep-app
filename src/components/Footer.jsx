@@ -1,14 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 
-function Footer(props) {
+const date = new Date();
+const year = date.getFullYear();
+
+function Footer() {
     return (
         <footer>
-            <p> 
-                Copyright {props.year}
-            </p>
+            <p>Copyright {year}</p>
         </footer>
-    )
+    );
 }
 
 export default Footer;

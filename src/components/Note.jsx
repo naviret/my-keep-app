@@ -1,15 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 
 function Note(props) {
     return (
-
-        <div class="note">
+        <div className='note'>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
+            <button onClick={props.onDelete}>Delete</button>
         </div>
-
-    )
+    );
 }
 
 export default Note;
